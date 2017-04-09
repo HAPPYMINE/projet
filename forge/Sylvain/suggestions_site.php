@@ -1,7 +1,7 @@
 <?php  //insertion entete et variables
 	require("inc/fonctions.inc.php");
-	$title = "Châteaux sur la Loire";																									//modifier 
-	$content = "châteaux de la Loire, incontournables";										//modifier
+	$title = "Nos idées découvertes";																									//modifier 
+	$content = "chateaux, monuments, sites, autres idées de visites et découvertes, sortir des sentiers battus";										//modifier
 	incl_entete($title, $content);
 ?>
 
@@ -10,19 +10,19 @@
 <?php incl_menu(); ?>
 <div class="page">
 	<section class="corps">
-		<h1>En bord de Loire</h1>
+		<h1>Sortir du commun, idées originales</h1>
 			<article class="ctx">
-				<h4>Amboise</h4>
+				<h4>La cathédrale de Tours</h4>
 				<p>...</p>
 				<!-- géoloc -->			
 			</article>
 			<article class="ctx">
-				<h4>Chaumont</h4>
+				<h4>Grottes pétrifiantes</h4>
 				<p>...</p>
 				<!-- géoloc -->			
 			</article>
 			<article class="ctx">
-				<h4>Langeais</h4>
+				<h4>Le Donjon de Loches</h4>
 				<p>...</p>
 				<!-- géoloc -->			
 			</article>

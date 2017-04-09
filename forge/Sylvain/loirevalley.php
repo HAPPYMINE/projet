@@ -8,18 +8,24 @@
 <!--Contenu HTML -> Christen -->
 <body>
 <?php incl_menu(); ?>
-<div class="loirevalley">
-	<h1>Test page loire valley</h1>
-		<div class="bl_">
-		<h4><a href="chateaux_bords_loire.php">Au bord de la loire</a></h4>
-		<p>Amboise, Chaumont, Langeais...</p>
-		<p><br/><br/><br/><br/></p>
-	</div>
-	<div class="bl_">
-		<h4><a href="chateaux_eloignes.php">En s'éloignant du fleuve</a></h4>
-		<p>Chenonceaux, Chambord...</p>
-		<p><br/><br/><br/><br/></p>
-	</div>
+<div class="page">
+	<section class="corps">
+		<h1>Les chateaux de la Loire...</h1>
+			<article class="">
+				<div class="bl_">
+					<h4><a href="chateaux_bords_loire.php">Au bord de la loire</a></h4>
+					<p>Amboise, Chaumont, Langeais...</p>
+					<p><br/><br/><br/><br/></p>
+				</div>
+			</article>
+			<article class="">
+				<div class="bl_">
+					<h4><a href="chateaux_eloignes_loire.php">En s'éloignant du fleuve</a></h4>
+					<p>Chenonceaux, Chambord...</p>
+					<p><br/><br/><br/><br/></p>
+				</div>
+			</article>
+	</section>
 </div>
 </body>
 

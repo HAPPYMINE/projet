@@ -19,7 +19,8 @@ echo "<!DOCTYPE html>
 						<meta name=\"viewport\" content=\"width=device-width\" />
 					  <link rel=\"icon\" type=\"image/x-icon\" href=\"images/favicon.ico\" />
 					  <link rel=\"stylesheet\" href=\"css/style.css\"/>
-					</head>";
+					</head>
+				<body>";
 }
 
 
@@ -34,7 +35,7 @@ echo '
 	<header class="entete">
 		<div id="logo"><a href="index.html"><img  src="images/index.jpeg" alt="logo" width="120" height="100"/></a></div>
 		<div id="titre">
-		  <h1>Chateaux et découvertes</h1>
+		  <h1>Val De Loire et Châteaux</h1>
 		  <h4>Des incontournables et des moins connus...</h4>
 		</div>
 		<!-- connexion au backOffice -->

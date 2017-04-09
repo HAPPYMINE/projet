@@ -1,6 +1,6 @@
 <?php  //insertion entete et variables
 	require("inc/fonctions.inc.php");
-	$title = "Châteaux sur la Loire";																									//modifier 
+	$title = "Châteaux en Val de Loire";																									//modifier 
 	$content = "châteaux de la Loire, incontournables";										//modifier
 	incl_entete($title, $content);
 ?>
@@ -12,17 +12,17 @@
 	<section class="corps">
 		<h1>En bord de Loire</h1>
 			<article class="ctx">
-				<h4>Amboise</h4>
+				<h4>Chenonceaux</h4>
 				<p>...</p>
 				<!-- géoloc -->			
 			</article>
 			<article class="ctx">
-				<h4>Chaumont</h4>
+				<h4>Villandry</h4>
 				<p>...</p>
 				<!-- géoloc -->			
 			</article>
 			<article class="ctx">
-				<h4>Langeais</h4>
+				<h4>Azay Le Rideau</h4>
 				<p>...</p>
 				<!-- géoloc -->			
 			</article>

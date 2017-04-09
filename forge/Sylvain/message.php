@@ -6,7 +6,6 @@
 ?>
 
 <!--Contenu HTML -> Christen -->
-<body>
 <?php incl_menu(); ?>
 <?php
 	//var BD
@@ -57,3 +56,10 @@
 	$con = null;					//vider mémoire
 
 ?>
+
+<?php 	//insertion footer
+	incl_footer();
+?>
+<!--fichiers script externes-->
+</body>
+</html>
