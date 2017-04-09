@@ -47,7 +47,7 @@ echo '
 				<li><a href="index.php" title="Acceuil">Acceuil</a></li>
 				<li><a href="loirevalley.php" title="Incontournables">Incontournables</a></li>
 				<li><a href="suggestions.php" title="suggestions">Suggestions</a></li>
-				<li><a href="contact.html" title="connexion">Contact</a></li>
+				<li><a href="contact.php" title="connexion">Contact</a></li>
 			</ul>
 
 	</nav>';
