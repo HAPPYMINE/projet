@@ -12,7 +12,7 @@
 		<article class="form">
 	    <h1>Contactez-nous</h1>
 	    <!--Début du formulaire-->
-			<form id="form0" name = "form0" action="message.php" method="post" enctype="multipart/form-data" onsubmit="return validSaisie();">
+			<form id="form0" name = "form0" action="save_mess.php" method="post" enctype="multipart/form-data" onsubmit="return validSaisie();">
 	      <fieldset class ="encadre_form_identite"><legend class="legend">Vous connaitre...</legend>
 	      <!--dans div (avec margin top dans css)  plutôt que paragraphe pour aèrer présentation-->
 	      <!-- infobulle dans title plutot qu'alert en js-->
@@ -43,7 +43,7 @@
 									<option value="none">Sélectionnez le sujet :</option>
 									<option value="dc">Demande de contact</option>
 									<option value="di">Demande d'information</option>
-									<option value="si">Suggestion d'amélioration</option>
+									<option value="sa">Suggestion d'amélioration</option>
 								</select>
 								<!--span class="tooltip">Sélectionnez un sujet</span-->
 	        		</div>

@@ -54,6 +54,21 @@ echo '
 	</nav>';
 }
 
+/*
+* F274 : Mettre "Bienvenue" en haut à droite lors de la 1e visite des pages grace cookies
+*/
+function incl_bienvenue()
+{
+	//creation cookie - durée de validité : 8 jours
+	setcookie('welcome', 'deja_vu', (time() + 3600 * 24));
+	//affiche mess si dejà vu ou non
+	if (isset($_COOKIE['welcome'])){
+		echo "Content de vous retrouver !";
+	}
+	else{
+		echo "Bienvenue pour votre 1° visite !";
+	}
+}
 
 
 

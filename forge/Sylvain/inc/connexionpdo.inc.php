@@ -1,7 +1,7 @@
 <!-- function de connexion à BDD -->
 <?php
 
-	function connect_pdo($DB, $server, $login)
+	function connect_pdo($DB, $server, $login, $mdp)
 	{
 		//permet de gérer les éventuelles erreurs
 		$pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
@@ -11,7 +11,7 @@
 		try
 		{
 			//Connexion à BD MySQL
-			$con = new PDO('mysql:host='.$server.'; dbname='.$DB, $login,'', $pdo_options) ;
+			$con = new PDO('mysql:host='.$server.'; dbname='.$DB, $login,$mdp, $pdo_options) ;
 		}
 		//aff message si exception levée
 		catch (PDOException $monexception)

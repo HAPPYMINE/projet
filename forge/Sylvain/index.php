@@ -8,7 +8,8 @@
 
 <!--Contenu HTML -> Christen -->
 <?php incl_menu(); ?>
-	<div class="page">
+
+	<div id="welcome"><p><?php incl_bienvenue(); ?></p></div>
 	<!--div>menu droit à venir...<-->
 		<section class="corps">
 	    <h1>Châteaux et Découvertes</h1>
