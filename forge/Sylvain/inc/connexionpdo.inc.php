@@ -3,6 +3,7 @@
 
 	function connect_pdo($DB, $server, $login, $mdp)
 	{
+		$DEBUG = TRUE;
 		//permet de gérer les éventuelles erreurs
 		$pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
 		//déclare l'utilisation du jeu de caractères UTF8
@@ -19,8 +20,9 @@
 			echo 'Error de connection à MySQL!: <br/>'.$monexception->getMessage();
 			exit();
 		}
-
-		echo "Connexion à MySql réussie<br/>";
+		if ($DEBUG){
+			echo "Connexion à MySql réussie<br/>"; //à suppimer apprés test
+		}
 
 		return $con;
 

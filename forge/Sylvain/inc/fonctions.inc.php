@@ -39,7 +39,7 @@ echo '
 		  <h4>Des incontournables et des moins connus...</h4>
 		</div>
 		<!-- connexion au backOffice -->
-		<p id="btn_connexion"> <a  href="connexion.php" title="connexion"> CONNEXION</a></p>
+		<div id="btn_connexion"><ul><li> <a  href="connexion.php" title="connexion"> CONNEXION</a></li></ul></p>
 	</header>
 	<!-- boutons pour selection chapitre ou fonctionnalité (connection...)-->
 	<nav class="menuHaut">
@@ -59,6 +59,7 @@ echo '
 */
 function incl_menu_backoffice()
 {
+	
 echo '
 	<!-- en-tete commun à l\'ensemble du site-->
 	<header class="entete">
@@ -67,8 +68,14 @@ echo '
 		  <h1>Val De Loire et Châteaux</h1>
 		  <h4>Des incontournables et des moins connus...</h4>
 		</div>
-		<!-- connexion au backOffice -->
-		<p id="btn_connexion"><a href="deconnect.php" title="deconnexion"> DECONNEXION</a></p>
+		<!-- F267 : Créer le boutons "Connexion" (au backoffice) (copie ecran) -->
+		<div id="btn_connexion">
+			<ul >
+				<li><a href="deconnect.php" title="deconnexion"> DECONNEXION</a></p></li>
+				<!--F269 : Afficher le pseudo (login) du connecté (copie ecran)-->
+				<li>';printf("Gestionnaire connecté : ".$_SESSION["membreid"]); echo '</li>  
+			</ul>
+		</div>
 	</header>
 	<!-- boutons pour selection chapitre ou fonctionnalité (connection...)-->
 	<nav class="menuHaut">

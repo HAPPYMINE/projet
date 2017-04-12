@@ -12,7 +12,7 @@
 		incl_menu_backoffice();
 		
 	} ?>
-
+	<!--F274 : Mettre "Bienvenue" en haut à droite lors de la 1e visite des pages grace cookies (copie écran)-->
 	<div id="welcome"><p><?php incl_bienvenue(); ?></p></div>
 	<!--div>menu droit à venir...<-->
 		<section class="corps">

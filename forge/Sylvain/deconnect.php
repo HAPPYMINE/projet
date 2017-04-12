@@ -8,7 +8,7 @@
 		<title>session deconnection</title>
 	</head>
 <body>
-	<h1>il y a eu destruction de la session d'identifiant<?php echo $id_s?></h1><br/>
-	<a href="index.php">retour à index.html</a>
+	<h3>il y a eu destruction de la session d'identifiant <?php echo $id_s?></h3>
+	<p><a href="index.php">retour à l'acceuil</a></p>	
 </body>
 </html>

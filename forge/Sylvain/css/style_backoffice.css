@@ -1,4 +1,22 @@
-td /* Toutes les cellules des tableaux... */
-{
-    border: 1px solid black; /* auront une bordure de 1px */
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 2px ;
+}
+
+a{
+		color: white;
+}
+
+*.modif_article{
+        display: inline;
+       /* margin-right: 15px;*/				/*pas de marge pour être aligné avec fieldset précédent*/
+        padding: 3px 10px;
+        width: 250px;
+        min-height: 1px;
+        text-align: left;
+        margin-bottom: 10px;
 }

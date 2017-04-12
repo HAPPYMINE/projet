@@ -40,13 +40,14 @@ a{
 /*---------EN TETE-----------*/
 header{
 	background-color: #30D0B0;
-	
+	list-style : none;
 	color: grey;
 	height : 110px;				/*ht logo + marges hautes et basse autour logo*/
 }
 
 header div{
 	display: inline-block;			/*les différentes rubriques du menu*/
+	list-style : none;
 	}
 
 #logo{
@@ -61,7 +62,7 @@ header div{
 	text-align : right;
 }
 
-#btn_connexion{
+#btn_connexion{								/*todo -> rond liste à puce (marqueur) )à suppr*/
 	float: right;
 	margin-top: 20px;
 	margin-right:5px;
@@ -71,7 +72,7 @@ header div{
 	border-radius:10px;
 }
 
-#btn_connexion a{
+#btn_connexion  ul li a{
 	color: #D03098;
 }
 
