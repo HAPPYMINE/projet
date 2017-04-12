@@ -1,13 +1,18 @@
-<?php  //insertion entete et variables
+<?php  session_start();
+//insertion entete et variables
 	require("inc/fonctions.inc.php");
 	$title = "Nos idées découvertes";																									//modifier 
 	$content = "chateaux, monuments, sites, autres idées de visites et découvertes, sortir des sentiers battus";										//modifier
 	incl_entete($title, $content);
+	if (!isset($_SESSION["membreid"])){
+		incl_menu();
+	}
+	else{
+		incl_menu_backoffice();
+		
+	}
 ?>
 
-<!--Contenu HTML -> Christen -->
-<body>
-<?php incl_menu(); ?>
 <div class="page">
 	<section class="corps">
 		<h1>Sortir du commun, idées originales</h1>

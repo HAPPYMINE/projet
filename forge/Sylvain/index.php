@@ -1,13 +1,17 @@
-<?php  //insertion entete et variables
+<?php  session_start();//insertion entete et variables
 	require("inc/fonctions.inc.php");
 	$title = "Val De Loire et Châteaux";																																	//modifier 
 	$content = "Ce site vous présente les châteaux de la Loire
 							ainsi que d'autres sites et monuments à découvrir hors des sentiers battus";						//modifier
 	incl_entete($title, $content);
-?>
-
-<!--Contenu HTML -> Christen -->
-<?php incl_menu(); ?>
+	//selection munu en fonction utilisateur connecté
+	if (!isset($_SESSION["membreid"])){
+		incl_menu();
+	}
+	else{
+		incl_menu_backoffice();
+		
+	} ?>
 
 	<div id="welcome"><p><?php incl_bienvenue(); ?></p></div>
 	<!--div>menu droit à venir...<-->

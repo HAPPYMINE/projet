@@ -1,13 +1,19 @@
-<?php  //insertion entete et variables
+<?php  session_start();
+//insertion entete et variables
 	require("inc/fonctions.inc.php");
 	$title = "Châteaux Monuments";																									//modifier 
 	$content = "Val de Loire, châteaux et monuments, suggestions";										//modifier
 	incl_entete($title, $content);
+	if (!isset($_SESSION["membreid"])){
+		incl_menu();
+	}
+	else{
+		incl_menu_backoffice();
+		
+	}
 ?>
 
-<!--Contenu HTML -> Christen -->
-<body>
-<?php incl_menu(); ?>
+
 <div class="page">
 	<section class="corps">
 		<h1>A voir  aussi en Val de Loire...</h1>

@@ -3,11 +3,14 @@
 	$title = "Validation de formulaire";																																	//modifier 
 	$content = "Contact valdeloirechateaux - Validation de votre message";						//modifier
 	incl_entete($title, $content);
-?>
+	if (!isset($_SESSION["membreid"])){
+		incl_menu();
+	}
+	else{
+		incl_menu_backoffice();
+		
+	}
 
-<!--Contenu HTML -> Christen -->
-<?php incl_menu(); ?>
-<?php
 	//var BD
 	$identite = $_POST['identite'];					//identité en 1 champ ; creer fct pour tronquer nom et prénom et modifier BD
 	$mail = $_POST['mail'];		

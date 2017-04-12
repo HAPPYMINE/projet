@@ -1,25 +1,31 @@
-<?php  //insertion entete et variables
+<?php  session_start();
+	//require("inc/acces.inc.php");
 	require("inc/fonctions.inc.php");
 	$title = "connexion";																																	//modifier 
 	$content = "";						//modifier
 	incl_entete($title, $content);
+	if (!isset($_SESSION["membreid"])){
+		incl_menu();
+	}
+	else{
+		incl_menu_backoffice();
+		
+	}
 ?>
 
-
-<?php incl_menu(); ?>
 <section class="corps">
 	    <h1>Connexion gestionnaire</h1>
-	      <article class="">
+	      <div class="">
 	        <fieldset class ="encadre_form_identite"><legend class="legend">Accés réservé gestionnaire du site</legend>
 	          <p>
-	            <form>
+	            <form  methode="post"  action="acces.php">
 	            	<p>
 	            		<label class="form_col" >login :   </label>
-	            		<input class="form_col" type="text" name="login" required>
+	            		<input class="form_col" type="text" name="login"> <!--required-->
 	            	</p>
 	            	<p>
 	            		<label class="form_col" >mot de passe :   </label>
-	            		<input class="form_col" type="password" name="psw" required>
+	            		<input class="form_col" type="password" name="psw" ><!--required-->
 	            	</p>
 	            	<div class="validation">
 									<input type="submit" value="Connexion" />   
@@ -30,8 +36,8 @@
 	          	
 	          </p>
 	        </fieldset>	
-	      </article>      
-	  </section>
+	      </div>      
+</section>
 
 
 

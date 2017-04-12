@@ -1,12 +1,18 @@
-<?php  //insertion entete et variables
+<?php  session_start();
+//insertion entete et variables
 	require("inc/fonctions.inc.php");
 	$title = "Laisser un message";																																	//modifier 
 	$content = "Contact valdeloirechateaux - Laisser votre message";						//modifier
 	incl_entete($title, $content);
+	if (!isset($_SESSION["membreid"])){
+		incl_menu();
+	}
+	else{
+		incl_menu_backoffice();
+		
+	}
 ?>
 
-<!--Contenu HTML -> Christen -->
-<?php incl_menu(); ?>
 <div class="page">
 	<section class="corps">
 		<article class="form">

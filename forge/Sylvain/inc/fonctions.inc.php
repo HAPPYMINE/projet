@@ -1,6 +1,5 @@
 <?php 
 
-
 /**
 *  Inclure  entete (DOCTYPE et HEAD)
 *  Variabilisation <title> et <meta content>
@@ -17,8 +16,9 @@ echo "<!DOCTYPE html>
 						<meta charset=\"utf-8\" />
 						<meta name=\"description\" content=\"$content\" />
 						<meta name=\"viewport\" content=\"width=device-width\" />
-					  <link rel=\"icon\" type=\"image/x-icon\" href=\"images/favicon.ico\" />
+					  <link rel=\"icon\" type=\"image/x-icon\" href=\"images/favicon.png\" />
 					  <link rel=\"stylesheet\" href=\"css/style.css\"/>
+					  <link rel=\"stylesheet\" href=\"css/style_backoffice.css\"/>
 					</head>
 				<body>";
 }
@@ -33,7 +33,7 @@ function incl_menu()
 echo '
 	<!-- en-tete commun à l\'ensemble du site-->
 	<header class="entete">
-		<div id="logo"><a href="index.html"><img  src="images/index.jpeg" alt="logo" width="120" height="100"/></a></div>
+		<div id="logo"><a href="index.php"><img  src="images/logo.png" alt="logo" width="120" height="100"/></a></div>
 		<div id="titre">
 		  <h1>Val De Loire et Châteaux</h1>
 		  <h4>Des incontournables et des moins connus...</h4>
@@ -50,9 +50,42 @@ echo '
 				<li><a href="suggestions.php" title="suggestions">Suggestions</a></li>
 				<li><a href="contact.php" title="connexion">Contact</a></li>
 			</ul>
+	</nav>';
+}
+
+
+/**
+*	Inclusion Menu backogcie pour gestionnaire du site
+*/
+function incl_menu_backoffice()
+{
+echo '
+	<!-- en-tete commun à l\'ensemble du site-->
+	<header class="entete">
+		<div id="logo"><a href="index.html"><img  src="images/logo.png" alt="logo" width="120" height="100"/></a></div>
+		<div id="titre">
+		  <h1>Val De Loire et Châteaux</h1>
+		  <h4>Des incontournables et des moins connus...</h4>
+		</div>
+		<!-- connexion au backOffice -->
+		<p id="btn_connexion"><a href="deconnect.php" title="deconnexion"> DECONNEXION</a></p>
+	</header>
+	<!-- boutons pour selection chapitre ou fonctionnalité (connection...)-->
+	<nav class="menuHaut">
+			<!--  ttributs title pour info-bulle--><!-- en-tete commun à l\'ensemble du site-->
+			<ul>
+				<li><a href="index.php" title="Acceuil">Acceuil</a></li>
+				<li><a href="loirevalley.php" title="Incontournables">Incontournables</a></li>
+				<li><a href="suggestions.php" title="suggestions">Suggestions</a></li>
+				<!--li><a href="contact.php" title="connexion">Contact</a></li-->
+				<li><a href="backoffice.php" title="backoffice">BackOffice</a></li>
+				<li><a href="message.php" title="messages">Messages</a></li>
+				<li><a href="modif_articles.php" title="modifier articles">Editeur Article</a></li>
+			</ul>
 
 	</nav>';
 }
+
 
 /*
 * F274 : Mettre "Bienvenue" en haut à droite lors de la 1e visite des pages grace cookies
