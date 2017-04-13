@@ -2,7 +2,7 @@
 	//require("inc/acces.inc.php");
 	require("inc/fonctions.inc.php");
 	$title = "connexion";																																	//modifier 
-	$content = "";						//modifier
+	$content = "Identification du gestionnaire du site";						//modifier
 	incl_entete($title, $content);
 	if (!isset($_SESSION["membreid"])){
 		incl_menu();
@@ -21,11 +21,11 @@
 	            <form  methode="post"  action="acces.php">
 	            	<p>
 	            		<label class="form_col" >login :   </label>
-	            		<input class="form_col" type="text" name="login"> <!--required-->
+	            		<input class="form_col" type="text" name="login" required>
 	            	</p>
 	            	<p>
 	            		<label class="form_col" >mot de passe :   </label>
-	            		<input class="form_col" type="password" name="psw" ><!--required-->
+	            		<input class="form_col" type="password" name="psw" required>
 	            	</p>
 	            	<div class="validation">
 									<input type="submit" value="Connexion" />   
@@ -38,8 +38,6 @@
 	        </fieldset>	
 	      </div>      
 </section>
-
-
 
 <?php 	//insertion footer
 	incl_footer();

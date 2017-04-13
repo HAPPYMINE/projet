@@ -20,6 +20,7 @@ Cette liste affichera sous forme de tableau HTML :
 - la date de la dernière modification de l'article
 - le login de la dernière personne ayant modifié l'article-->
 
+<!--préparation du tableau d'affichage des résultats-->
 <section class="corps">
 	    <h1>Listes des articles</h1>
 	    <p>Cliquer sur le titre de l'article pour le modifier</p>
@@ -32,17 +33,11 @@ Cette liste affichera sous forme de tableau HTML :
   						<td>AUTEUR</td>
   					</tr>
 <?php
-	//connexion à la base
-	$login = 'www';
-	$mdp = '';
-	$DB = 'valdeloirechateaux';
-	$server = 'localhost';
-
+	//connextion à la BD
 	require('inc/connexionpdo.inc.php');
-	$con = connect_pdo($DB, $server, $login, $mdp);
-
+	$con = connect_pdo();
 	//requete
-	$req = "SELECT art_id, art_categorie, art_titre, art_categorie, art_date, art_auteur FROM articles";
+	$req = "SELECT art_id, art_categorie, art_titre, art_date, art_auteur FROM articles ORDER BY art_categorie ASC";
 	$reponse =  $con->query($req);
 	if ($reponse == null)
 	{
@@ -52,9 +47,7 @@ Cette liste affichera sous forme de tableau HTML :
   else{
   	while($ligne = $reponse->fetch())
   	{
-//  		$id= $ligne['art_id'];
-//  		echo $id;
-  		//affichage ligne / ligne
+  		//affichage ligne / ligne					(test //  		$id= $ligne['art_id'];)
 echo '<tr>
   			<td>';print($ligne['art_categorie']);echo '</td>
   			<td><a href="saisie_modif_articles.php?id=';echo $ligne['art_id'];echo '" title="Modifier cet article">';
@@ -67,11 +60,17 @@ echo '<tr>
 
 	$con = null;				//fermer connexion BD
 ?>
+					
+			
+	<!--fermeture des balises du tableau-->
 			</table>
 		</div>
+		<!-- a faire-->
+		<div>
+				<p>Ajouter un article  (en cours de développement...)</p>
+				<p>Supprimer un article (en cours de développement...)</p>
+		</div>
 </section>
-
-
 
 <?php 	//insertion footer
 	incl_footer();

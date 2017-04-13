@@ -1,15 +1,10 @@
 <!-- vérification de l'identité de l'utilisateur-->
 <?php session_start();
 	$id_session = $_REQUEST['login'];
-	$mdp_session = $_REQUEST['psw'];
-
-	$login = 'www';
-	$mdp = '';
-	$DB = 'valdeloirechateaux';
-	$server = 'localhost';
+	$mdp_session = md5($_REQUEST['psw']);			//dans BD mdp (varchar 32) chiffré md5
 
 	require('inc/connexionpdo.inc.php');
-	$con = connect_pdo($DB, $server, $login, $mdp);
+	$con = connect_pdo();
 
 	$req = "SELECT * FROM gestionnaire WHERE gest_login='$id_session' AND gest_pswd='$mdp_session'";
 	$reponse =  $con->query($req);

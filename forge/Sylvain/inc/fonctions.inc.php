@@ -87,7 +87,6 @@ echo '
 				<!--li><a href="contact.php" title="connexion">Contact</a></li-->
 				<li><a href="backoffice.php" title="backoffice">BackOffice</a></li>
 				<li><a href="message.php" title="messages">Messages</a></li>
-				<li><a href="modif_articles.php" title="modifier articles">Editeur Article</a></li>
 			</ul>
 
 	</nav>';
@@ -109,9 +108,6 @@ function incl_bienvenue()
 		echo "Bienvenue pour votre 1° visite !";
 	}
 }
-
-
-
 
 
 /**

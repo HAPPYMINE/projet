@@ -12,21 +12,12 @@
 	}
 ?>
 
-
 <?php
-//connexion à BD pour préremplir le formulaire avec les 'anciennes ' valeurs
-//echo $_REQUEST['id'];			//test ok
-//echo $_REQUEST['titre'];	//test ok
-	$id = $_REQUEST['id'];
+	//connexion à BD pour préremplir le formulaire avec les 'anciennes ' valeurs
+	$id = $_REQUEST['id'];									//$_POST HS ????
 	//connexion à la base
-	$login = 'www';
-	$mdp = '';
-	$DB = 'valdeloirechateaux';
-	$server = 'localhost';
-
 	require('inc/connexionpdo.inc.php');
-	$con = connect_pdo($DB, $server, $login, $mdp);
-
+	$con = connect_pdo();
 	//requete (ligne de l'article selectionné (par son id))
 	$req = "SELECT art_titre, art_contenu FROM articles WHERE art_id = $id";
 	$reponse =  $con->query($req);
@@ -42,7 +33,6 @@
   	}
   }
   $con = null;				//fermer connexion BD
-
 ?>
 
 <!--F271 : Créer en backoffice le formulaire de modification des articles (copie ecran).-->
@@ -68,8 +58,6 @@
 	            </form>
 	      </div>	
 </section>
-
-
 
 <?php 	//insertion footer
 	incl_footer();

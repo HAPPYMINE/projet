@@ -13,64 +13,65 @@
 ?>
 
 <!--F271 : Créer en backoffice le formulaire de modification des articles (copie ecran).-->
+<!-- Page appelée par le formulaire -->
 
 <?php
-//echo $_REQUEST['id'];			//test ok
-//echo $_REQUEST['titre'];	//test ok
-	$id = $_REQUEST['id'];
-	$new_titre = $_REQUEST['titre'];
-	$new_contenu = $_REQUEST['id'];
-	//connexion à la base
-	$login = 'www';
-	$mdp = '';
-	$DB = 'valdeloirechateaux';
-	$server = 'localhost';
+	$id = $_REQUEST['id'];											//$_POST HS
+	$new_titre = addslashes($_REQUEST['titre']);			//ajoute automatiquement les échapp \ pour le guillemets...
+	$new_contenu = addslashes($_REQUEST['contenu']);
 
 	$time = time();
 	$date = date('l d F Y H:i:s',$time);				//pour récupérer heure de sauvegarde de l'article
-	$auteur = $_SESSION["membreid"];
-
+	$auteur = $_SESSION["membreid"];						//le gestionnaire connecté est l'auteur
+	//connexion à la base
 	require('inc/connexionpdo.inc.php');
-	$con = connect_pdo($DB, $server, $login, $mdp);
+	$con = connect_pdo();
+	//on récupére le contenu de l'article en BD
+	//(car pas possible avec attrib placeholder de récupérer ancien texte depuis le textarea)
+	$req = "SELECT art_contenu FROM articles WHERE art_id = $id";
+	$reponse =  $con->query($req);
+	if ($reponse == null)
+	{
+		print_r($db -> errorInfo());
+    die();
+	}
+  else{
+  	if($art = $reponse->fetch())
+  	{
+  		$old_contenu = $art['art_contenu'];
+  	}
+  }
 
-	//requete (ligne de l'article selectionné (par son id))
-	//$req = "SELECT art_categorie, art_titre, art_contenu, art_date, art_auteur FROM articles WHERE art_id = $id";
-	
-		try{
-			if (isset($new_titre)){
-				$req0 = "UPDATE articles SET art_titre='$new_titre', art_date = '$date', art_auteur = '$auteur' WHERE art_id = $id"; 
-				// Prepare la requête
-	    	$trait0 = $con->prepare($req0);
-	    	// execute 
-	    	$trait0->execute();
-	    	// echo a message to say the UPDATE succeeded
-	    	echo $trait0->rowCount() . " records UPDATED successfully";
-			}
-			if (isset($new_contenu)){
-				$req1 = "UPDATE articles SET art_titre='$new_titre' WHERE art_id = $id"; 
-				// Prepare la requête
-	    	$trait1 = $con->prepare($req1);
-	    	// execute 
-	    	$trait1->execute();
-	    	// echo a message to say the UPDATE succeeded
-	    	echo $trait1->rowCount() . " records UPDATED successfully";
-			}
+	try{
+		if (strcmp("", $new_contenu) == 0){		//si le contenu n'a pas été modifié  ($new_contneu est vide)
+
+			//requete (ligne de l'article selectionné (par son id)) en "recopiant" le contneu de l'artcle d'origine
+			$req = "UPDATE articles SET art_titre='$new_titre', art_date = '$date', art_auteur = '$auteur' WHERE art_id = $id"; 
+			// Prepare la requête
+    	$trait0 = $con->prepare($req);
+    	// execute 
+    	$trait0->execute();
+    	// echo a message to say the UPDATE succeeded
+    	echo $trait0->rowCount() . " L'aticle a été correctement mis à jour.";
 		}
-		catch(PDOException $e)
-    {
-    	//affichage des messages d'erreur en cas d'exception levée
-    	echo $req0 . "<br>" . $e->getMessage();
-    }
-	
+		else{			//le contenu de l'aticle à changé
+			$req = "UPDATE articles SET art_titre='$new_titre',art_contenu='$new_contenu', art_date = '$date', art_auteur = '$auteur'  WHERE art_id = $id"; 
+			// Prepare la requête
+    	$trait1 = $con->prepare($req);
+    	// executer
+    	$trait1->execute();
+    	// informer
+    	echo $trait1->rowCount() . " L'aticle a été correctement mis à jour.";
+		}
+	}
+	catch(PDOException $e)
+  {
+  	//affichage des messages d'erreur en cas d'exception levée
+  	echo $req . "<br>" . $e->getMessage();
+  }
 
   $con = null;				//fermer connexion BD
 ?>
-
-
-
-
-
-
 
 <?php 	//insertion footer
 	incl_footer();

@@ -131,83 +131,8 @@ header div{
 }
 
 /*-----------MENU-GAUCHE-------------*/
-*.menuGauche{
-	background-color:MidnightBlue;		/*#2f304e;*/
-	display: inline-block;
-	width: 144px;
-	padding: 5px;
-	color: white;
-	-moz-box-shadow: 5px 5px 5px Silver; /*#c0c0c0;*/
-	-webkit-box-shadow: 5px 5px 5px Silver; /*#c0c0c0;*/
-	-o-box-shadow: 5px 5px 5px Silver; /*#c0c0c0;*/
-	box-shadow: 5px 5px 5px Silver; /*#c0c0c0;*/
-	position: relative;
-	margin-top:0px;				
-}
-
-
-*.menuGauche li{
-	margin-top: 5px;
-	list-style-type: none;
-    font-size : 14px;
-}
-
-*.menuGauche a{
-	color: white;
-}
-
-*.menuGauche div{
-	padding-bottom: 1em;
-    margin-top: 10px;
-}
 
 /*-----------MENU-DROIT-------------*/
-*.menuDroit{
-	/*background-color:#2f304e; */
-	display: inline-block;
-	width: 60px;
-	min-width: 60px;
-	height:150px;
-	padding: 5px;
-	font-size: 11px;
-	-moz-box-shadow: -5px 5px 5px Silver; /*#c0c0c0;*/		/* compatibilité ombre différents navigateurs*/
-	-webkit-box-shadow: -5px 5px 5px Silver; /*#c0c0c0;*/
-	-o-box-shadow: -5px 5px 5px Silver; /*#c0c0c0;*/
-	box-shadow: -5px 5px 5px Silver; /*#c0c0c0;*/
-	background-color: LightGrey; /*#E6E6E6;*/
-	position: fixed;
-	right: 80px;
-	top:220px;					/*on colle au bord droit du site*/	
-	/*margin-top:0px;				/* commence sous le header*/
-}
-
-*.menuDroit li{
-	/*margin-top: 5px;
-	margin-bottom: 5px;*/
-	list-style-type: none;
-    font-size : 14px;
-}
-
-*.menuDroit a{
-	color: MidnightBlue;		/*#2f304e;*/
-	font-size: 14px;
-	margin-bottom: 5px;
-}
-
-*.menuDroit div{
-    display:block;
-	/*vertical-align: bottom;*/
-	text-align: center;
-}
-
-*.menuDroit div iframe{					/*ajouté suite validation w3c*/
-	border: 0;
-	width: 50px;						/*propriétés pour centrage dans menu*/
-	height: 63px;
-	display: inline-block;
-	/*margin-left: 0;
-	margin-right: auto;*/
-}
 
 /*------------Corps article principal--------*/
 
@@ -222,20 +147,20 @@ header div{
 	background-color: grey;
 }
 
-.ctx{
+._art{
 	margin: 30px;
 	padding:  15px;
 	border-color: black;
 	border-width: 1px;
 	border-style: solid;
 	background-color: grey;
-
-
 }
 
-
-
-
+.art_date, .art_auteur
+{
+	font-style: italic;
+	font-size: x-small;
+}
 
 
 

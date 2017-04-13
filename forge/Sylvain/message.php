@@ -5,19 +5,9 @@
 	$content = "Contact valdeloirechateaux - Validation de votre message";						//modifier
 	incl_entete($title, $content);
 
-	//  DB locale
-	$DB = 'valdeloirechateaux';
-	$login = 'www';
-	$server = 'localhost';
-	$mdp = '';
-	//conn BD hostinger
-	/*$DB = 'u765291999_vdlc';			//
-	$login = 'u765291999_www';
-	$server = 'mysql.hostinger.fr';
-	$mdp = 'C@Sj#2017';*/
-
+	// connect DB
 	require('inc/connexionpdo.inc.php');
-	$con = connect_pdo($DB, $server, $login, $mdp);
+	$con = connect_pdo();
 
 	if (!isset($_SESSION["membreid"])){				//si c'est un internaute anonyme
 		incl_menu();
@@ -48,10 +38,9 @@
 		// -> insérer date serveur SQL...  (type de donnée SQL mess_date -> DATETIME)
 		//$req1="INSERT INTO messages(mess_sujet, mess_contenu, mess_date) VALUES ('$categorie', '$message', NOW()) ";
 		// -> insérer date serveur PHP...  (type de donnée SQL mess_date -> VARCHAR)
-		//on recupère l'id de l'utilisateur venant de laisser le mess
 		$req1="INSERT INTO messages(mess_sujet, mess_contenu, mess_date, mess_auteur) VALUES ('$categorie', '$message', '$date','$identite' ) "; 			/* $identite -> (SELECT user_id FROM user WHERE user_identite = $identite*/
 
-			//permet d'envoyer la requête au serveur.
+		//envoyer la requête au serveur.
 		$resultat1 = $con->query($req1); 
 
 		//on teste si requetes ont abouti
@@ -73,9 +62,10 @@
 	/*F278 : Liste des messages recus sur page "message.php" (copie ecran)
 	Si c'est un administrateur connecté qui consulte la page "messages.php" ,
 	afficher en plus, la liste des messages reçus via le formulaire de contact.*/
-		if ($_SESSION["membreid"] == "user")
-		{
-			echo '<section class="corps">
+
+		if (isset($_SESSION["membreid"]))
+		{																				//prepare l tableau de résultat
+			echo '<section class="corps">									
 		    <h1>Listes des messages reçus</h1>
 		      <div class="tab_articles">
 		      	<table>
@@ -85,7 +75,7 @@
 	  						<td>DATE</td>
 	  						<td>AUTEUR</td>
 	  					</tr>';
-	  					//requete
+	  	//requete -> selection de tous les champs et entités de la table mess
 			$req2 = "SELECT mess_sujet, mess_contenu, mess_date, mess_auteur FROM messages";
 			$reponse =  $con->query($req2);
 			if ($reponse == null)
@@ -94,7 +84,7 @@
 		    die();
 			}
 		  else{
-		  	while($ligne = $reponse->fetch())
+		  	while($ligne = $reponse->fetch())				//affiche ligne/ligne
 		  	{
 		  		echo '<tr>
 		  			<td>';print($ligne['mess_sujet']);echo '</td>
