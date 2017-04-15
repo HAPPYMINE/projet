@@ -15,7 +15,7 @@ echo "<!DOCTYPE html>
 						<title>$title</title>
 						<meta charset=\"utf-8\" />
 						<meta name=\"description\" content=\"$content\" />
-						<meta name=\"viewport\" content=\"width=device-width\" />
+						<meta name=\"viewport\" content=\"width=320\" />
 					  <link rel=\"icon\" type=\"image/x-icon\" href=\"images/favicon.png\" />
 					  <link rel=\"stylesheet\" href=\"css/style.css\"/>
 					  <link rel=\"stylesheet\" href=\"css/style_backoffice.css\"/>
@@ -33,19 +33,19 @@ function incl_menu()
 echo '
 	<!-- en-tete commun à l\'ensemble du site-->
 	<header class="entete">
-		<div id="logo"><a href="index.php"><img  src="images/logo.png" alt="logo" width="120" height="100"/></a></div>
+		<div ><a href="index.php"><img id="logo" src="images/logo.png" alt="logo"/></a></div>
 		<div id="titre">
 		  <h1>Val De Loire et Châteaux</h1>
 		  <h4>Des incontournables et des moins connus...</h4>
 		</div>
 		<!-- connexion au backOffice -->
-		<div id="btn_connexion"><ul><li> <a  href="connexion.php" title="connexion"> CONNEXION</a></li></ul></p>
+		<div id="btn_connexion"><a  href="connexion.php" title="connexion"> CONNEXION</a></div>
 	</header>
 	<!-- boutons pour selection chapitre ou fonctionnalité (connection...)-->
 	<nav class="menuHaut">
 			<!--  élémént sélectionné du menu en gras,attributs title pour info-bulle--><!-- en-tete commun à l\'ensemble du site-->
 			<ul>
-				<li><a href="index.php" title="Acceuil">Acceuil</a></li>
+				<li id="t1"><a href="index.php" title="Acceuil">Acceuil</a></li>
 				<li><a href="loirevalley.php" title="Incontournables">Incontournables</a></li>
 				<li><a href="suggestions.php" title="suggestions">Suggestions</a></li>
 				<li><a href="contact.php" title="connexion">Contact</a></li>
@@ -120,7 +120,7 @@ echo "<footer>
 		<nav>
 			<div class='infooter' id='copyright'>
       Copyright &copy; 2016-2017 Châteaux et Découvertes : 
-      <br/>Christen et Sylvain - NFA017/83<br/>Tous droits réservés
+      <br/>Christen et Sylvain - NFA017/21/83<br/>Tous droits réservés
       </div>
 
 			<div class='infooter'>

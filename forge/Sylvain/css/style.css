@@ -1,11 +1,4 @@
-@media screen and (max-width: 480px)
-{
-    nav
-    {
-        display: block;
-        width: 100%;
-    }
-}
+/*-----------------------------------*/
 
 *{
    padding: 0px ;
@@ -33,6 +26,17 @@ body{
 	min-width: 870px;			/*correspond au mini munu sur une ligne*/
 }
 
+@media all and (max-width: 800px)
+{
+	body{
+		background-color: #ECF6CE;
+		color: black;
+		font: 30px/40px "Helvetica",arial, sans-serif;
+		display: block;
+	}
+}
+
+
 a{
 	text-decoration: none;
 }
@@ -45,23 +49,55 @@ header{
 	height : 110px;				/*ht logo + marges hautes et basse autour logo*/
 }
 
-header div{
+
+#titre{
 	display: inline-block;			/*les différentes rubriques du menu*/
 	list-style : none;
 	}
 
+@media all and (max-width: 800px)
+{
+	header{
+	background-color: #309080;
+	list-style : none;
+	color: LightGrey;
+	height : 150px;				/*ht logo + marges hautes et basse autour logo*/
+	}
+	#titre{
+	display: inline-block;			/*les différentes rubriques du menu*/
+	list-style : none;
+	margin-top: 15px;
+	}
+
+
+}
+
 #logo{
 	float: left;
 	margin:5px;
+	width: auto;
+	height: 100px;
 	}
 
+@media all and (max-width: 800px)
+{	
+	#logo{
+		float: left;
+		margin:5px;
+		width: auto;
+		height: 140px;
+
+	}
+}
+
+/*
 #adresse{
 	float: right;
 	margin-right: 10px;
 	margin-top: 20px;
 	text-align : right;
 }
-
+*/
 #btn_connexion{								/*todo -> rond liste à puce (marqueur) )à suppr*/
 	float: right;
 	margin-top: 20px;
@@ -72,10 +108,27 @@ header div{
 	border-radius:10px;
 }
 
-#btn_connexion  ul li a{
+#btn_connexion a{
 	color: #D03098;
+	text-align: center;
 }
 
+@media all and (max-width: 800px)
+{	
+	#btn_connexion {								/*todo -> rond liste à puce (marqueur) )à suppr*/
+		font-size: x-large;
+		position: relative;
+  	bottom: 50px;
+  	left: 0px;
+  	margin-right: 25px;
+  	/*float: right;*/
+		color: #F03098;
+		/*width: 50%;*/
+		display: block;
+		border-style: none;
+	}
+}
+/*
 #banniere_image
 {
     margin-top: 10px;
@@ -90,20 +143,19 @@ header div{
 	height: 100%;
 		width: 100%;
 	}
-
+*/
 /*--------------MENU-HAUT---------------*/
 
 .menuHaut{
 	font-size: large;
 	color: #D03098;
 	display: inline-block;
-	margin-top: -10px;            /*limiter espaces entre menu et header*/
+	/*margin-top: -10px;            /*limiter espaces entre menu et header*/
 	margin-right: auto;
 	margin-left: auto;
 	text-align: center;
 	width: 100%;
 }
-
 
 .menuHaut li{
 	display: inline-block;
@@ -117,6 +169,38 @@ header div{
 .menuHaut a{
 	color: #D03098;
 }
+
+@media all and (max-width: 800px)
+{
+	.menuHaut li{
+		border-style: none;
+		background-color: green;
+		border-radius: 0;
+		
+		color: #F03098;
+		width: 47%;
+		height: 150px;
+		margin-bottom: 15px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.menuHaut a{	
+		font-size: xx-large;
+		color: white;
+		height:150px;
+ 	 width:100%;
+  	padding-top:60px;
+    /*d) Repositionnement du bloc*/
+      position:absolute;
+      margin-top:-16px;
+      margin-left:-50%;
+
+	}
+}
+
+}
+
 
 #select{
 	font-weight: bolder;
@@ -135,6 +219,9 @@ header div{
 /*-----------MENU-DROIT-------------*/
 
 /*------------Corps article principal--------*/
+.corps{
+	margin: 15px;
+}
 
 .bl_{
 	margin: 30px;
@@ -323,3 +410,10 @@ color: white;
 	width: 28%;
 }
 
+@media all and (max-width: 800px)
+{
+	#copyright{
+	/*font-size: 12px;*/
+	margin-top : 8px;
+	width: 28%;
+}
